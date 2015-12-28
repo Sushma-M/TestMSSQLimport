@@ -20,8 +20,7 @@
 		"dataBinding": [],
 		"saveInPhonegap": false,
 		"category": "wm.Variable",
-		"_id": "wm-supportedLocale-wm.Variable1402640443182",
-		"$$hashKey": "object:1873"
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
 	},
 	"AdventureWorks2014DepartmentData": {
 		"name": "AdventureWorks2014DepartmentData",
@@ -112,8 +111,7 @@
 			"entityName": "Department",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.Department",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1858"
+		}
 	},
 	"AdventureWorks2014EmployeeData": {
 		"name": "AdventureWorks2014EmployeeData",
@@ -360,8 +358,7 @@
 			"entityName": "Employee",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.Employee",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1859"
+		}
 	},
 	"AdventureWorks2014EmployeeDepartmentHistoryData": {
 		"name": "AdventureWorks2014EmployeeDepartmentHistoryData",
@@ -852,8 +849,7 @@
 			"entityName": "EmployeeDepartmentHistory",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.EmployeeDepartmentHistory",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1860"
+		}
 	},
 	"AdventureWorks2014EmployeePayHistoryData": {
 		"name": "AdventureWorks2014EmployeePayHistoryData",
@@ -1184,8 +1180,7 @@
 			"entityName": "EmployeePayHistory",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.EmployeePayHistory",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1861"
+		}
 	},
 	"AdventureWorks2014JobCandidateData": {
 		"name": "AdventureWorks2014JobCandidateData",
@@ -1502,8 +1497,7 @@
 			"entityName": "JobCandidate",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.JobCandidate",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1862"
+		}
 	},
 	"AdventureWorks2014ShiftData": {
 		"name": "AdventureWorks2014ShiftData",
@@ -1607,8 +1601,7 @@
 			"entityName": "Shift",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.Shift",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1863"
+		}
 	},
 	"AdventureWorks2014Table13Data": {
 		"name": "AdventureWorks2014Table13Data",
@@ -1673,8 +1666,7 @@
 			"entityName": "Table13",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.Table13",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1864"
+		}
 	},
 	"AdventureWorks2014TableNameData": {
 		"name": "AdventureWorks2014TableNameData",
@@ -1726,8 +1718,7 @@
 			"entityName": "TableName",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.TableName",
 			"tableType": "TABLE"
-		},
-		"$$hashKey": "object:1865"
+		}
 	},
 	"AdventureWorks2014VemployeeData": {
 		"name": "AdventureWorks2014VemployeeData",
@@ -1998,8 +1989,7 @@
 			"entityName": "Vemployee",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.Vemployee",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1866"
+		}
 	},
 	"AdventureWorks2014VemployeeDepartmentData": {
 		"name": "AdventureWorks2014VemployeeDepartmentData",
@@ -2166,8 +2156,7 @@
 			"entityName": "VemployeeDepartment",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.VemployeeDepartment",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1867"
+		}
 	},
 	"AdventureWorks2014VemployeeDepartmentHistoryData": {
 		"name": "AdventureWorks2014VemployeeDepartmentHistoryData",
@@ -2347,8 +2336,7 @@
 			"entityName": "VemployeeDepartmentHistory",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.VemployeeDepartmentHistory",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1868"
+		}
 	},
 	"AdventureWorks2014VjobCandidateData": {
 		"name": "AdventureWorks2014VjobCandidateData",
@@ -2593,8 +2581,7 @@
 			"entityName": "VjobCandidate",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.VjobCandidate",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1869"
+		}
 	},
 	"AdventureWorks2014VjobCandidateEducationData": {
 		"name": "AdventureWorks2014VjobCandidateEducationData",
@@ -2800,8 +2787,7 @@
 			"entityName": "VjobCandidateEducation",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.VjobCandidateEducation",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1870"
+		}
 	},
 	"AdventureWorks2014VjobCandidateEmploymentData": {
 		"name": "AdventureWorks2014VjobCandidateEmploymentData",
@@ -2981,10 +2967,10 @@
 			"entityName": "VjobCandidateEmployment",
 			"fullyQualifiedName": "com.testmssqlimport.adventureworks2014.VjobCandidateEmployment",
 			"tableType": "VIEW"
-		},
-		"$$hashKey": "object:1871"
+		}
 	},
 	"GoogleapisInvoke": {
+		"name": "GoogleapisInvoke",
 		"type": "googleapis.DirectionsResponse",
 		"isList": false,
 		"owner": "App",
@@ -3048,8 +3034,70 @@
 			]
 		},
 		"_id": "wm-GoogleapisInvoke-wm.ServiceVariable-1451282246537",
-		"name": "GoogleapisInvoke",
-		"$$hashKey": "object:1872",
 		"controller": "RestServiceVirtual"
+	},
+	"Testdb345Table1Data": {
+		"type": "Table1",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "testdb345",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "MySQL",
+		"_id": "wm-Testdb345Table1Data-wm.LiveVariable-1451283196942",
+		"package": "com.testmssqlimport.testdb345.Table1",
+		"tableName": "TABLE1",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "id",
+					"type": "integer",
+					"hibernateType": "integer",
+					"fullyQualifiedType": "integer",
+					"columnName": "ID",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"generator": "identity",
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "column2",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "COLUMN2",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryFields": [
+				"id"
+			],
+			"entityName": "Table1",
+			"fullyQualifiedName": "com.testmssqlimport.testdb345.Table1",
+			"tableType": "TABLE"
+		}
 	}
 }
