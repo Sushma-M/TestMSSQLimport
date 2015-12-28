@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.testmssqlimport.adventureworks2014">
+  <class table="`table_name`" name="com.testmssqlimport.adventureworks2014.TableName" entity-name="com.testmssqlimport.adventureworks2014.TableName" schema="HumanResources">
+    <id name="column1" type="integer">
+      <column name="`column_1`" length="255" not-null="true" precision="19"/>
+      <generator class="identity"/>
+    </id>
+  </class>
+  <class table="`TABLE13`" name="com.testmssqlimport.adventureworks2014.Table13" entity-name="com.testmssqlimport.adventureworks2014.Table13" schema="HumanResources">
+    <id name="id" type="integer">
+      <column name="`ID`" length="255" not-null="true" precision="19"/>
+      <generator class="identity"/>
+    </id>
+    <property name="column2" type="string">
+      <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
+    </property>
+  </class>
+  <class table="`Department`" name="com.testmssqlimport.adventureworks2014.Department" entity-name="com.testmssqlimport.adventureworks2014.Department" schema="HumanResources">
+    <id name="departmentId" type="short">
+      <column name="`DepartmentID`" length="255" not-null="true" precision="19"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column name="`Name`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="groupName" type="string">
+      <column name="`GroupName`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <set name="employeeDepartmentHistories" table="EmployeeDepartmentHistory" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`DepartmentID`"/>
+      </key>
+      <one-to-many class="EmployeeDepartmentHistory"/>
+    </set>
+  </class>
+  <class table="`vEmployeeDepartmentHistory`" name="com.testmssqlimport.adventureworks2014.VemployeeDepartmentHistory" entity-name="com.testmssqlimport.adventureworks2014.VemployeeDepartmentHistory" schema="HumanResources">
+    <composite-id mapped="true" class="VemployeeDepartmentHistoryId">
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="title" type="string">
+        <column name="`Title`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="firstName" type="string">
+        <column name="`FirstName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="middleName" type="string">
+        <column name="`MiddleName`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="lastName" type="string">
+        <column name="`LastName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="suffix" type="string">
+        <column name="`Suffix`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="shift" type="string">
+        <column name="`Shift`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="department" type="string">
+        <column name="`Department`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="groupName" type="string">
+        <column name="`GroupName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="startDate" type="date">
+        <column name="`StartDate`" length="10" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="endDate" type="date">
+        <column name="`EndDate`" length="10" not-null="false" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`vJobCandidate`" name="com.testmssqlimport.adventureworks2014.VjobCandidate" entity-name="com.testmssqlimport.adventureworks2014.VjobCandidate" schema="HumanResources">
+    <composite-id mapped="true" class="VjobCandidateId">
+      <key-property name="jobCandidateId" type="integer">
+        <column name="`JobCandidateID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="name_prefix" type="string">
+        <column name="`Name.Prefix`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="name_first" type="string">
+        <column name="`Name.First`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="name_middle" type="string">
+        <column name="`Name.Middle`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="name_last" type="string">
+        <column name="`Name.Last`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="name_suffix" type="string">
+        <column name="`Name.Suffix`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="skills" type="string">
+        <column name="`Skills`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="addr_type" type="string">
+        <column name="`Addr.Type`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="addr_loc_countryRegion" type="string">
+        <column name="`Addr.Loc.CountryRegion`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="addr_loc_state" type="string">
+        <column name="`Addr.Loc.State`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="addr_loc_city" type="string">
+        <column name="`Addr.Loc.City`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="addr_postalCode" type="string">
+        <column name="`Addr.PostalCode`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="email" type="string">
+        <column name="`EMail`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="webSite" type="string">
+        <column name="`WebSite`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`Employee`" name="com.testmssqlimport.adventureworks2014.Employee" entity-name="com.testmssqlimport.adventureworks2014.Employee" schema="HumanResources">
+    <id name="businessEntityId" type="integer">
+      <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nationalIdnumber" type="string">
+      <column name="`NationalIDNumber`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="loginId" type="string">
+      <column name="`LoginID`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="organizationNode" type="binary">
+      <column name="`OrganizationNode`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="organizationLevel" type="java.lang.Short">
+      <column name="`OrganizationLevel`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="jobTitle" type="string">
+      <column name="`JobTitle`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="birthDate" type="date">
+      <column name="`BirthDate`" length="10" not-null="true" precision="19"/>
+    </property>
+    <property name="maritalStatus" type="string">
+      <column name="`MaritalStatus`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="gender" type="string">
+      <column name="`Gender`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="hireDate" type="date">
+      <column name="`HireDate`" length="10" not-null="true" precision="19"/>
+    </property>
+    <property name="salariedFlag" type="boolean">
+      <column name="`SalariedFlag`" length="255" not-null="true" precision="19" default="0"/>
+    </property>
+    <property name="vacationHours" type="short">
+      <column name="`VacationHours`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="sickLeaveHours" type="short">
+      <column name="`SickLeaveHours`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="currentFlag" type="boolean">
+      <column name="`CurrentFlag`" length="255" not-null="true" precision="19" default="0"/>
+    </property>
+    <property name="rowguid" type="string">
+      <column name="`rowguid`" length="36" not-null="true" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <set name="jobCandidates" table="JobCandidate" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`BusinessEntityID`"/>
+      </key>
+      <one-to-many class="JobCandidate"/>
+    </set>
+    <set name="employeePayHistories" table="EmployeePayHistory" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`BusinessEntityID`"/>
+      </key>
+      <one-to-many class="EmployeePayHistory"/>
+    </set>
+    <set name="employeeDepartmentHistories" table="EmployeeDepartmentHistory" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`BusinessEntityID`"/>
+      </key>
+      <one-to-many class="EmployeeDepartmentHistory"/>
+    </set>
+  </class>
+  <class table="`vEmployee`" name="com.testmssqlimport.adventureworks2014.Vemployee" entity-name="com.testmssqlimport.adventureworks2014.Vemployee" schema="HumanResources">
+    <composite-id mapped="true" class="VemployeeId">
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="title" type="string">
+        <column name="`Title`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="firstName" type="string">
+        <column name="`FirstName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="middleName" type="string">
+        <column name="`MiddleName`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="lastName" type="string">
+        <column name="`LastName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="suffix" type="string">
+        <column name="`Suffix`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="jobTitle" type="string">
+        <column name="`JobTitle`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="phoneNumber" type="string">
+        <column name="`PhoneNumber`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="phoneNumberType" type="string">
+        <column name="`PhoneNumberType`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emailAddress" type="string">
+        <column name="`EmailAddress`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emailPromotion" type="integer">
+        <column name="`EmailPromotion`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="addressLine1" type="string">
+        <column name="`AddressLine1`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="addressLine2" type="string">
+        <column name="`AddressLine2`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="city" type="string">
+        <column name="`City`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="stateProvinceName" type="string">
+        <column name="`StateProvinceName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="postalCode" type="string">
+        <column name="`PostalCode`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="countryRegionName" type="string">
+        <column name="`CountryRegionName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="additionalContactInfo" type="string">
+        <column name="`AdditionalContactInfo`" length="255" not-null="false" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`JobCandidate`" name="com.testmssqlimport.adventureworks2014.JobCandidate" entity-name="com.testmssqlimport.adventureworks2014.JobCandidate" schema="HumanResources">
+    <id name="jobCandidateId" type="integer">
+      <column name="`JobCandidateID`" length="255" not-null="true" precision="19"/>
+      <generator class="identity"/>
+    </id>
+    <property name="resume" type="text">
+      <column name="`Resume`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <many-to-one
+      name="employee"
+      class="Employee"
+      fetch="select">
+      <meta attribute="mapping-BusinessEntityID">
+        BusinessEntityID
+      </meta>
+      <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+    </many-to-one>
+  </class>
+  <class table="`vEmployeeDepartment`" name="com.testmssqlimport.adventureworks2014.VemployeeDepartment" entity-name="com.testmssqlimport.adventureworks2014.VemployeeDepartment" schema="HumanResources">
+    <composite-id mapped="true" class="VemployeeDepartmentId">
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="title" type="string">
+        <column name="`Title`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="firstName" type="string">
+        <column name="`FirstName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="middleName" type="string">
+        <column name="`MiddleName`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="lastName" type="string">
+        <column name="`LastName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="suffix" type="string">
+        <column name="`Suffix`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="jobTitle" type="string">
+        <column name="`JobTitle`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="department" type="string">
+        <column name="`Department`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="groupName" type="string">
+        <column name="`GroupName`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="startDate" type="date">
+        <column name="`StartDate`" length="10" not-null="true" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`Shift`" name="com.testmssqlimport.adventureworks2014.Shift" entity-name="com.testmssqlimport.adventureworks2014.Shift" schema="HumanResources">
+    <id name="shiftId" type="byte">
+      <column name="`ShiftID`" length="255" not-null="true" precision="19"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column name="`Name`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="startTime" type="time">
+      <column name="`StartTime`" length="16" not-null="true" precision="19"/>
+    </property>
+    <property name="endTime" type="time">
+      <column name="`EndTime`" length="16" not-null="true" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <set name="employeeDepartmentHistories" table="EmployeeDepartmentHistory" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`ShiftID`"/>
+      </key>
+      <one-to-many class="EmployeeDepartmentHistory"/>
+    </set>
+  </class>
+  <class table="`vJobCandidateEmployment`" name="com.testmssqlimport.adventureworks2014.VjobCandidateEmployment" entity-name="com.testmssqlimport.adventureworks2014.VjobCandidateEmployment" schema="HumanResources">
+    <composite-id mapped="true" class="VjobCandidateEmploymentId">
+      <key-property name="jobCandidateId" type="integer">
+        <column name="`JobCandidateID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="emp_startDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`Emp.StartDate`" length="23" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_endDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`Emp.EndDate`" length="23" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_orgName" type="string">
+        <column name="`Emp.OrgName`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_jobTitle" type="string">
+        <column name="`Emp.JobTitle`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_responsibility" type="string">
+        <column name="`Emp.Responsibility`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_functionCategory" type="string">
+        <column name="`Emp.FunctionCategory`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_industryCategory" type="string">
+        <column name="`Emp.IndustryCategory`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_loc_countryRegion" type="string">
+        <column name="`Emp.Loc.CountryRegion`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_loc_state" type="string">
+        <column name="`Emp.Loc.State`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="emp_loc_city" type="string">
+        <column name="`Emp.Loc.City`" length="255" not-null="false" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`EmployeePayHistory`" name="com.testmssqlimport.adventureworks2014.EmployeePayHistory" entity-name="com.testmssqlimport.adventureworks2014.EmployeePayHistory" schema="HumanResources">
+    <composite-id mapped="true" class="EmployeePayHistoryId">
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="rateChangeDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`RateChangeDate`" length="23" not-null="true" precision="19"/>
+      </key-property>
+    </composite-id>
+    <property name="rate" type="big_decimal">
+      <column name="`Rate`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="payFrequency" type="byte">
+      <column name="`PayFrequency`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <many-to-one
+      name="employee"
+      class="Employee"
+      fetch="select"
+      update="false"
+      insert="false">
+      <meta attribute="mapping-BusinessEntityID">
+        BusinessEntityID
+      </meta>
+      <meta attribute="setter-override">
+        this.businessEntityId = employee.getBusinessEntityId();
+      </meta>
+      <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+    </many-to-one>
+  </class>
+  <class table="`vJobCandidateEducation`" name="com.testmssqlimport.adventureworks2014.VjobCandidateEducation" entity-name="com.testmssqlimport.adventureworks2014.VjobCandidateEducation" schema="HumanResources">
+    <composite-id mapped="true" class="VjobCandidateEducationId">
+      <key-property name="jobCandidateId" type="integer">
+        <column name="`JobCandidateID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="edu_level" type="string">
+        <column name="`Edu.Level`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_startDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`Edu.StartDate`" length="23" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_endDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+        <column name="`Edu.EndDate`" length="23" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_degree" type="string">
+        <column name="`Edu.Degree`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_major" type="string">
+        <column name="`Edu.Major`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_minor" type="string">
+        <column name="`Edu.Minor`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_gpa" type="string">
+        <column name="`Edu.GPA`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_gpascale" type="string">
+        <column name="`Edu.GPAScale`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_school" type="string">
+        <column name="`Edu.School`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_loc_countryRegion" type="string">
+        <column name="`Edu.Loc.CountryRegion`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_loc_state" type="string">
+        <column name="`Edu.Loc.State`" length="255" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="edu_loc_city" type="string">
+        <column name="`Edu.Loc.City`" length="255" not-null="false" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`EmployeeDepartmentHistory`" name="com.testmssqlimport.adventureworks2014.EmployeeDepartmentHistory" entity-name="com.testmssqlimport.adventureworks2014.EmployeeDepartmentHistory" schema="HumanResources">
+    <composite-id mapped="true" class="EmployeeDepartmentHistoryId">
+      <key-property name="businessEntityId" type="integer">
+        <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="startDate" type="date">
+        <column name="`StartDate`" length="10" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="departmentId" type="short">
+        <column name="`DepartmentID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="shiftId" type="byte">
+        <column name="`ShiftID`" length="255" not-null="true" precision="19"/>
+      </key-property>
+    </composite-id>
+    <property name="endDate" type="date">
+      <column name="`EndDate`" length="10" not-null="false" precision="19"/>
+    </property>
+    <property name="modifiedDate" type="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime">
+      <column name="`ModifiedDate`" length="23" not-null="true" precision="19"/>
+    </property>
+    <many-to-one
+      name="department"
+      class="Department"
+      fetch="select"
+      update="false"
+      insert="false">
+      <meta attribute="mapping-DepartmentID">
+        DepartmentID
+      </meta>
+      <meta attribute="setter-override">
+        this.departmentId = department.getDepartmentId();
+      </meta>
+      <column name="`DepartmentID`" length="255" not-null="true" precision="19"/>
+    </many-to-one>
+    <many-to-one
+      name="employee"
+      class="Employee"
+      fetch="select"
+      update="false"
+      insert="false">
+      <meta attribute="mapping-BusinessEntityID">
+        BusinessEntityID
+      </meta>
+      <meta attribute="setter-override">
+        this.businessEntityId = employee.getBusinessEntityId();
+      </meta>
+      <column name="`BusinessEntityID`" length="255" not-null="true" precision="19"/>
+    </many-to-one>
+    <many-to-one
+      name="shift"
+      class="Shift"
+      fetch="select"
+      update="false"
+      insert="false">
+      <meta attribute="mapping-ShiftID">
+        ShiftID
+      </meta>
+      <meta attribute="setter-override">
+        this.shiftId = shift.getShiftId();
+      </meta>
+      <column name="`ShiftID`" length="255" not-null="true" precision="19"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>
